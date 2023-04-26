@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dg1o84ii4oypn"]
+
+[ext_resource type="FontFile" uid="uid://bjo5c1e2g1vt6" path="res://Fonts/Kenney Blocks.ttf" id="1_67vi0"]
+[ext_resource type="StyleBox" uid="uid://ct4xrguwgj85g" path="res://Themes/Styles/hover_button_style_box_flat.tres" id="2_2iivl"]
+[ext_resource type="StyleBox" uid="uid://d2j40857rfysr" path="res://Themes/Styles/normal_button_style_box_flat.tres" id="3_bl3lm"]
+[ext_resource type="StyleBox" uid="uid://bxwc3btggfqcw" path="res://Themes/Styles/pressed_button_style_box_flat.tres" id="4_fdyam"]
+
+[resource]
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_67vi0")
+Button/styles/hover = ExtResource("2_2iivl")
+Button/styles/normal = ExtResource("3_bl3lm")
+Button/styles/pressed = ExtResource("4_fdyam")

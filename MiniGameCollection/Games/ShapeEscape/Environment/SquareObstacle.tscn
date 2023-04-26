@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://drjuy5lvlnvo2"]
+
+[ext_resource type="Script" path="res://Games/ShapeEscape/Environment/Scripts/Obstacle.gd" id="1_ptf2m"]
+[ext_resource type="Texture2D" uid="uid://bmstmc77gxydo" path="res://Sprites/Placeholders/32x32_colored_squares.png" id="2_boe5d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnk78"]
+size = Vector2(31.9999, 32.0001)
+
+[node name="SquareObstacle" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_ptf2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gnk78")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_boe5d")
+hframes = 10
+vframes = 10
+frame = 8

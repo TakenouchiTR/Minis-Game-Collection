@@ -1,0 +1,119 @@
+[gd_scene load_steps=5 format=3 uid="uid://duixc80pes7pp"]
+
+[ext_resource type="FontFile" uid="uid://bjo5c1e2g1vt6" path="res://Fonts/Kenney Blocks.ttf" id="1_0gwe0"]
+[ext_resource type="Script" path="res://Games/ShapeEscape/Screens/Scripts/LevelSelect.gd" id="1_2r6qg"]
+[ext_resource type="Theme" uid="uid://dg1o84ii4oypn" path="res://Themes/Main.tres" id="3_dg4bh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qwifh"]
+font = ExtResource("1_0gwe0")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+outline_size = 16
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2r6qg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.392157, 0.584314, 0.929412, 1)
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme = ExtResource("3_dg4bh")
+text = "Level Select"
+label_settings = SubResource("LabelSettings_qwifh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level1Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.45
+anchor_right = 0.25
+anchor_bottom = 0.55
+theme = ExtResource("3_dg4bh")
+theme_override_fonts/font = ExtResource("1_0gwe0")
+disabled = true
+text = "1"
+
+[node name="Level2Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.45
+anchor_right = 0.4
+anchor_bottom = 0.55
+theme = ExtResource("3_dg4bh")
+theme_override_fonts/font = ExtResource("1_0gwe0")
+disabled = true
+text = "2
+"
+
+[node name="Level3Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.45
+anchor_right = 0.55
+anchor_bottom = 0.55
+theme = ExtResource("3_dg4bh")
+theme_override_fonts/font = ExtResource("1_0gwe0")
+disabled = true
+text = "3
+"
+
+[node name="Level4Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 0.45
+anchor_right = 0.7
+anchor_bottom = 0.55
+theme = ExtResource("3_dg4bh")
+theme_override_fonts/font = ExtResource("1_0gwe0")
+disabled = true
+text = "4"
+
+[node name="Level5Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.45
+anchor_right = 0.85
+anchor_bottom = 0.55
+theme = ExtResource("3_dg4bh")
+theme_override_fonts/font = ExtResource("1_0gwe0")
+disabled = true
+text = "5
+"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.65
+anchor_right = 0.6
+anchor_bottom = 0.75
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("3_dg4bh")
+theme_override_fonts/font = ExtResource("1_0gwe0")
+text = "Back"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
