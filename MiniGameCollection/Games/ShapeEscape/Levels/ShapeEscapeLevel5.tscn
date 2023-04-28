@@ -216,6 +216,8 @@ layer_0/tile_data = PackedInt32Array(917523, 0, 0, 917522, 0, 0, 917521, 0, 0, 9
 
 [node name="Spinner" type="StaticBody2D" parent="ForegroundObstacles" index="0"]
 position = Vector2(112, 112)
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("2_54qfy")
 rotation_speed = 2.0
 
