@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://eci2jn5o2c18"]
+
+[ext_resource type="Shader" path="res://Shaders/bordered_solid_color.gdshader" id="1_t6jqk"]
+
+[resource]
+shader = ExtResource("1_t6jqk")
+shader_parameter/sprite_scale = Vector2(1, 1)
+shader_parameter/edge_distance = 4
+shader_parameter/inner_color = Color(1, 0, 0, 1)
+shader_parameter/outer_color = Color(0, 1, 0, 1)

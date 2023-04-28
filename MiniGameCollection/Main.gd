@@ -1,8 +1,8 @@
 extends Node2D
 
-const _GAME_SELECT = preload("res://Screens/GameSelect.tscn")
+const _GAME_SELECT := preload("res://Screens/GameSelect.tscn")
 
-@onready var _canvas_layer = $CanvasLayer
+@onready var _canvas_layer := $CanvasLayer
 
 var _current_screen
 

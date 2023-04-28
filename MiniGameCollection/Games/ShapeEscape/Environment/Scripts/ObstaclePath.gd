@@ -1,13 +1,21 @@
 extends Path2D
 
-@export var speed = 320
+@export var speed := 320.0
 
-@onready var _path_follow: PathFollow2D = $PathFollow2D
+@onready var _initial_speed := speed
 
 func _physics_process(delta):
-	_path_follow.progress += speed * delta
+	for path_follow in get_children():
+		path_follow.progress += speed * delta
 
 func stop():
 	speed = 0
-	for child in _path_follow.get_children():
-		child.stop()
+	for path_follow in get_children():
+		for child in path_follow.get_children():
+			child.stop()
+
+func restart():
+	speed = _initial_speed
+	for path_follow in get_children():
+		for child in path_follow.get_children():
+			child.restart()

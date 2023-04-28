@@ -1,0 +1,1580 @@
+[gd_scene load_steps=15 format=3 uid="uid://dvxs4e0m6e6nt"]
+
+[ext_resource type="PackedScene" uid="uid://dvohxg0ev8883" path="res://Games/ShapeEscape/Levels/ShapeEscapeLevel.tscn" id="1_fkafn"]
+[ext_resource type="Texture2D" uid="uid://bmstmc77gxydo" path="res://Sprites/Placeholders/32x32_colored_squares.png" id="2_g2xgt"]
+[ext_resource type="Texture2D" uid="uid://cwhqlxt65s0b5" path="res://Sprites/Placeholders/32x32_colored_squares_no_border.png" id="3_en65n"]
+[ext_resource type="PackedScene" uid="uid://bykcvmjr8v0jy" path="res://Games/ShapeEscape/Environment/ObstaclePath.tscn" id="4_4o51j"]
+[ext_resource type="PackedScene" uid="uid://drjuy5lvlnvo2" path="res://Games/ShapeEscape/Environment/SquareObstacle.tscn" id="5_wlpve"]
+[ext_resource type="Script" path="res://Games/ShapeEscape/Environment/Scripts/ObstaclePath.gd" id="6_8f1jv"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_4myo3"]
+tile_data = PackedInt32Array(0, 262145, 0, 65536, 327681, 0, 131072, 262145, 0, 196608, 327681, 0, 1, 327681, 0, 65537, 262145, 0, 131073, 327681, 0, 196609, 262145, 0, 2, 262145, 0, 65538, 327681, 0, 131074, 262145, 0, 196610, 327681, 0, 3, 327681, 0, 65539, 262145, 0, 131075, 327681, 0, 196611, 262145, 0)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wrui"]
+texture = ExtResource("2_g2xgt")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_44an8"]
+texture = ExtResource("3_en65n")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6l6ue"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_0wrui")
+sources/1 = SubResource("TileSetAtlasSource_44an8")
+pattern_0 = SubResource("TileMapPattern_4myo3")
+
+[sub_resource type="Curve2D" id="Curve2D_wvd4i"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 32, 336, 0, 0, 0, 0, 80, 336, 0, 0, 0, 0, 32, 336)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_1dfjn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 656, 400, 0, 0, 0, 0, 400, 400, 0, 0, 0, 0, 400, 240, 0, 0, 0, 0, 240, 240, 0, 0, 0, 0, 240, 496)
+}
+point_count = 5
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w2qth"]
+texture = ExtResource("2_g2xgt")
+texture_region_size = Vector2i(32, 32)
+use_texture_padding = false
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:0/0 = 0
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:0/0 = 0
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:0/0 = 0
+7:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:0/0/physics_layer_0/angular_velocity = 0.0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+8:0/0 = 0
+8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:0/0/physics_layer_0/angular_velocity = 0.0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:0/0 = 0
+9:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:0/0/physics_layer_0/angular_velocity = 0.0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:1/0 = 0
+5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:1/0/physics_layer_0/angular_velocity = 0.0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:1/0 = 0
+6:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:1/0/physics_layer_0/angular_velocity = 0.0
+7:1/0 = 0
+7:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:1/0/physics_layer_0/angular_velocity = 0.0
+8:1/0 = 0
+8:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:1/0/physics_layer_0/angular_velocity = 0.0
+9:1/0 = 0
+9:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+5:2/0 = 0
+5:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:2/0/physics_layer_0/angular_velocity = 0.0
+6:2/0 = 0
+6:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:2/0/physics_layer_0/angular_velocity = 0.0
+7:2/0 = 0
+7:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:2/0/physics_layer_0/angular_velocity = 0.0
+8:2/0 = 0
+8:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:2/0/physics_layer_0/angular_velocity = 0.0
+9:2/0 = 0
+9:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:2/0/physics_layer_0/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+4:3/0 = 0
+4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:3/0/physics_layer_0/angular_velocity = 0.0
+5:3/0 = 0
+5:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:3/0/physics_layer_0/angular_velocity = 0.0
+6:3/0 = 0
+6:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:3/0/physics_layer_0/angular_velocity = 0.0
+7:3/0 = 0
+7:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:3/0/physics_layer_0/angular_velocity = 0.0
+8:3/0 = 0
+8:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:3/0/physics_layer_0/angular_velocity = 0.0
+9:3/0 = 0
+9:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:3/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_esihd"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_w2qth")
+
+[node name="ShapeEscapeLevel4" instance=ExtResource("1_fkafn")]
+
+[node name="Background" parent="." index="0"]
+tile_set = SubResource("TileSet_6l6ue")
+layer_0/tile_data = PackedInt32Array(0, 262145, 0, 65536, 327681, 0, 131072, 262145, 0, 196608, 327681, 0, 1, 327681, 0, 65537, 262145, 0, 131073, 327681, 0, 196609, 262145, 0, 2, 262145, 0, 65538, 327681, 0, 131074, 262145, 0, 196610, 327681, 0, 3, 327681, 0, 65539, 262145, 0, 131075, 327681, 0, 196611, 262145, 0, 262144, 262145, 0, 327680, 327681, 0, 393216, 262145, 0, 458752, 327681, 0, 262145, 327681, 0, 327681, 262145, 0, 393217, 327681, 0, 458753, 262145, 0, 262146, 262145, 0, 327682, 327681, 0, 393218, 262145, 0, 458754, 327681, 0, 262147, 327681, 0, 327683, 262145, 0, 393219, 327681, 0, 458755, 262145, 0, 524288, 262145, 0, 589824, 327681, 0, 655360, 262145, 0, 720896, 327681, 0, 524289, 327681, 0, 589825, 262145, 0, 655361, 327681, 0, 720897, 262145, 0, 524290, 262145, 0, 589826, 327681, 0, 655362, 262145, 0, 720898, 327681, 0, 524291, 327681, 0, 589827, 262145, 0, 655363, 327681, 0, 720899, 262145, 0, 786432, 262145, 0, 851968, 327681, 0, 917504, 262145, 0, 786433, 327681, 0, 851969, 262145, 0, 917505, 327681, 0, 786434, 131072, 0, 851970, 327681, 0, 917506, 262145, 0, 786435, 327681, 0, 851971, 262145, 0, 917507, 327681, 0, 4, 262145, 0, 65540, 327681, 0, 131076, 262145, 0, 196612, 327681, 0, 5, 327681, 0, 65541, 262145, 0, 131077, 327681, 0, 196613, 262145, 0, 6, 262145, 0, 65542, 327681, 0, 131078, 262145, 0, 196614, 327681, 0, 7, 327681, 0, 65543, 262145, 0, 131079, 327681, 0, 196615, 262145, 0, 262148, 262145, 0, 327684, 327681, 0, 393220, 262145, 0, 458756, 327681, 0, 262149, 327681, 0, 327685, 262145, 0, 393221, 327681, 0, 458757, 262145, 0, 262150, 262145, 0, 327686, 327681, 0, 393222, 262145, 0, 458758, 327681, 0, 262151, 327681, 0, 327687, 262145, 0, 393223, 327681, 0, 458759, 262145, 0, 524292, 262145, 0, 589828, 327681, 0, 655364, 262145, 0, 720900, 327681, 0, 524293, 327681, 0, 589829, 262145, 0, 655365, 327681, 0, 720901, 262145, 0, 524294, 262145, 0, 589830, 327681, 0, 655366, 262145, 0, 720902, 327681, 0, 524295, 327681, 0, 589831, 262145, 0, 655367, 327681, 0, 720903, 262145, 0, 786436, 262145, 0, 851972, 327681, 0, 917508, 262145, 0, 786437, 327681, 0, 851973, 262145, 0, 917509, 327681, 0, 786438, 262145, 0, 851974, 327681, 0, 917510, 262145, 0, 786439, 65536, 0, 851975, 262145, 0, 917511, 327681, 0, 8, 262145, 0, 65544, 327681, 0, 131080, 262145, 0, 196616, 327681, 0, 9, 327681, 0, 65545, 262145, 0, 131081, 327681, 0, 196617, 262145, 0, 10, 262145, 0, 65546, 327681, 0, 131082, 262145, 0, 196618, 327681, 0, 11, 327681, 0, 65547, 262145, 0, 131083, 327681, 0, 196619, 262145, 0, 262152, 262145, 0, 327688, 327681, 0, 393224, 262145, 0, 458760, 327681, 0, 262153, 327681, 0, 327689, 262145, 0, 393225, 327681, 0, 458761, 262145, 0, 262154, 262145, 0, 327690, 327681, 0, 393226, 262145, 0, 458762, 327681, 0, 262155, 327681, 0, 327691, 262145, 0, 393227, 327681, 0, 458763, 262145, 0, 524296, 262145, 0, 589832, 327681, 0, 655368, 262145, 0, 720904, 327681, 0, 524297, 327681, 0, 589833, 262145, 0, 655369, 327681, 0, 720905, 262145, 0, 524298, 262145, 0, 589834, 327681, 0, 655370, 262145, 0, 720906, 327681, 0, 524299, 327681, 0, 589835, 262145, 0, 655371, 327681, 0, 720907, 262145, 0, 786440, 262145, 0, 851976, 327681, 0, 917512, 262145, 0, 786441, 327681, 0, 851977, 262145, 0, 917513, 327681, 0, 786442, 262145, 0, 851978, 327681, 0, 917514, 262145, 0, 786443, 327681, 0, 851979, 262145, 0, 917515, 327681, 0, 12, 262145, 0, 65548, 327681, 0, 131084, 262145, 0, 196620, 327681, 0, 13, 327681, 0, 65549, 262145, 0, 131085, 327681, 0, 196621, 262145, 0, 14, 262145, 0, 65550, 327681, 0, 131086, 262145, 0, 196622, 327681, 0, 15, 327681, 0, 65551, 262145, 0, 131087, 327681, 0, 196623, 262145, 0, 262156, 262145, 0, 327692, 327681, 0, 393228, 262145, 0, 458764, 327681, 0, 262157, 327681, 0, 327693, 262145, 0, 393229, 327681, 0, 458765, 262145, 0, 262158, 262145, 0, 327694, 327681, 0, 393230, 262145, 0, 458766, 327681, 0, 262159, 327681, 0, 327695, 262145, 0, 393231, 327681, 0, 458767, 262145, 0, 524300, 262145, 0, 589836, 327681, 0, 655372, 262145, 0, 720908, 327681, 0, 524301, 327681, 0, 589837, 262145, 0, 655373, 327681, 0, 720909, 262145, 0, 524302, 262145, 0, 589838, 327681, 0, 655374, 262145, 0, 720910, 327681, 0, 524303, 327681, 0, 589839, 262145, 0, 655375, 327681, 0, 720911, 262145, 0, 786444, 262145, 0, 851980, 327681, 0, 917516, 262145, 0, 786445, 327681, 0, 851981, 262145, 0, 917517, 327681, 0, 786446, 262145, 0, 851982, 327681, 0, 917518, 262145, 0, 786447, 327681, 0, 851983, 262145, 0, 917519, 327681, 0, 16, 262145, 0, 65552, 327681, 0, 131088, 262145, 0, 196624, 327681, 0, 17, 327681, 0, 65553, 262145, 0, 131089, 327681, 0, 196625, 262145, 0, 18, 262145, 0, 65554, 327681, 0, 131090, 262145, 0, 196626, 327681, 0, 19, 327681, 0, 65555, 262145, 0, 131091, 327681, 0, 196627, 262145, 0, 262160, 262145, 0, 327696, 327681, 0, 393232, 262145, 0, 458768, 327681, 0, 262161, 327681, 0, 327697, 262145, 0, 393233, 327681, 0, 458769, 262145, 0, 262162, 262145, 0, 327698, 327681, 0, 393234, 262145, 0, 458770, 327681, 0, 262163, 327681, 0, 327699, 262145, 0, 393235, 327681, 0, 458771, 262145, 0, 524304, 262145, 0, 589840, 327681, 0, 655376, 262145, 0, 720912, 327681, 0, 524305, 327681, 0, 589841, 262145, 0, 655377, 327681, 0, 720913, 262145, 0, 524306, 262145, 0, 589842, 327681, 0, 655378, 262145, 0, 720914, 327681, 0, 524307, 327681, 0, 589843, 262145, 0, 655379, 327681, 0, 720915, 262145, 0, 786448, 262145, 0, 851984, 327681, 0, 917520, 262145, 0, 786449, 327681, 0, 851985, 262145, 0, 917521, 327681, 0, 786450, 262145, 0, 851986, 327681, 0, 917522, 262145, 0, 786451, 327681, 0, 851987, 262145, 0, 917523, 327681, 0)
+
+[node name="Player" parent="." index="1"]
+position = Vector2(80, 400)
+
+[node name="FirstPath" type="Node2D" parent="Obstacles" index="0"]
+
+[node name="ObstaclePath" parent="Obstacles/FirstPath" index="0" instance=ExtResource("4_4o51j")]
+rotation = -0.00324449
+curve = SubResource("Curve2D_wvd4i")
+speed = 64.0
+
+[node name="PathFollow2D" parent="Obstacles/FirstPath/ObstaclePath" index="0"]
+position = Vector2(80, 336)
+progress = 48.0
+
+[node name="SquareObstacle" parent="Obstacles/FirstPath/ObstaclePath/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/FirstPath/ObstaclePath/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath2" parent="Obstacles/FirstPath" index="1" instance=ExtResource("4_4o51j")]
+position = Vector2(160, 672)
+rotation = 3.13835
+curve = SubResource("Curve2D_wvd4i")
+speed = 64.0
+
+[node name="PathFollow2D" parent="Obstacles/FirstPath/ObstaclePath2" index="0"]
+position = Vector2(80, 336)
+progress = 48.0
+
+[node name="SquareObstacle" parent="Obstacles/FirstPath/ObstaclePath2/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/FirstPath/ObstaclePath2/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath3" parent="Obstacles/FirstPath" index="2" instance=ExtResource("4_4o51j")]
+position = Vector2(0, -32)
+rotation = -0.00324449
+curve = SubResource("Curve2D_wvd4i")
+speed = 64.0
+
+[node name="PathFollow2D" parent="Obstacles/FirstPath/ObstaclePath3" index="0"]
+position = Vector2(70.4587, 336)
+progress = 38.4
+
+[node name="SquareObstacle" parent="Obstacles/FirstPath/ObstaclePath3/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/FirstPath/ObstaclePath3/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath4" parent="Obstacles/FirstPath" index="3" instance=ExtResource("4_4o51j")]
+position = Vector2(160, 640)
+rotation = 3.13835
+curve = SubResource("Curve2D_wvd4i")
+speed = 64.0
+
+[node name="PathFollow2D" parent="Obstacles/FirstPath/ObstaclePath4" index="0"]
+position = Vector2(70.4587, 336)
+progress = 38.4
+
+[node name="SquareObstacle" parent="Obstacles/FirstPath/ObstaclePath4/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/FirstPath/ObstaclePath4/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath5" parent="Obstacles/FirstPath" index="4" instance=ExtResource("4_4o51j")]
+position = Vector2(0, -64)
+rotation = -0.00324449
+curve = SubResource("Curve2D_wvd4i")
+speed = 64.0
+
+[node name="PathFollow2D" parent="Obstacles/FirstPath/ObstaclePath5" index="0"]
+position = Vector2(60.8052, 336)
+progress = 28.8
+
+[node name="SquareObstacle" parent="Obstacles/FirstPath/ObstaclePath5/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/FirstPath/ObstaclePath5/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath6" parent="Obstacles/FirstPath" index="5" instance=ExtResource("4_4o51j")]
+position = Vector2(160, 608)
+rotation = 3.13835
+curve = SubResource("Curve2D_wvd4i")
+speed = 64.0
+
+[node name="PathFollow2D" parent="Obstacles/FirstPath/ObstaclePath6" index="0"]
+position = Vector2(60.8052, 336)
+progress = 28.8
+
+[node name="SquareObstacle" parent="Obstacles/FirstPath/ObstaclePath6/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/FirstPath/ObstaclePath6/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath7" parent="Obstacles/FirstPath" index="6" instance=ExtResource("4_4o51j")]
+position = Vector2(0, -96)
+rotation = -0.00324449
+curve = SubResource("Curve2D_wvd4i")
+speed = 64.0
+
+[node name="PathFollow2D" parent="Obstacles/FirstPath/ObstaclePath7" index="0"]
+position = Vector2(51.1948, 336)
+progress = 19.2
+
+[node name="SquareObstacle" parent="Obstacles/FirstPath/ObstaclePath7/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/FirstPath/ObstaclePath7/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath8" parent="Obstacles/FirstPath" index="7" instance=ExtResource("4_4o51j")]
+position = Vector2(160, 576)
+rotation = 3.13835
+curve = SubResource("Curve2D_wvd4i")
+speed = 64.0
+
+[node name="PathFollow2D" parent="Obstacles/FirstPath/ObstaclePath8" index="0"]
+position = Vector2(51.1948, 336)
+progress = 19.2
+
+[node name="SquareObstacle" parent="Obstacles/FirstPath/ObstaclePath8/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/FirstPath/ObstaclePath8/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath9" parent="Obstacles/FirstPath" index="8" instance=ExtResource("4_4o51j")]
+position = Vector2(0, -128)
+rotation = -0.00324449
+curve = SubResource("Curve2D_wvd4i")
+speed = 64.0
+
+[node name="PathFollow2D" parent="Obstacles/FirstPath/ObstaclePath9" index="0"]
+position = Vector2(41.5413, 336)
+progress = 9.6
+
+[node name="SquareObstacle" parent="Obstacles/FirstPath/ObstaclePath9/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/FirstPath/ObstaclePath9/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath10" parent="Obstacles/FirstPath" index="9" instance=ExtResource("4_4o51j")]
+position = Vector2(160, 544)
+rotation = 3.13835
+curve = SubResource("Curve2D_wvd4i")
+speed = 64.0
+
+[node name="PathFollow2D" parent="Obstacles/FirstPath/ObstaclePath10" index="0"]
+position = Vector2(41.5413, 336)
+progress = 9.6
+
+[node name="SquareObstacle" parent="Obstacles/FirstPath/ObstaclePath10/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/FirstPath/ObstaclePath10/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath11" parent="Obstacles/FirstPath" index="10" instance=ExtResource("4_4o51j")]
+position = Vector2(0, -160)
+rotation = -0.00324449
+curve = SubResource("Curve2D_wvd4i")
+speed = 64.0
+
+[node name="PathFollow2D" parent="Obstacles/FirstPath/ObstaclePath11" index="0"]
+position = Vector2(32, 336)
+
+[node name="SquareObstacle" parent="Obstacles/FirstPath/ObstaclePath11/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/FirstPath/ObstaclePath11/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath12" parent="Obstacles/FirstPath" index="11" instance=ExtResource("4_4o51j")]
+position = Vector2(160, 512)
+rotation = 3.13835
+curve = SubResource("Curve2D_wvd4i")
+speed = 64.0
+
+[node name="PathFollow2D" parent="Obstacles/FirstPath/ObstaclePath12" index="0"]
+position = Vector2(32, 336)
+
+[node name="SquareObstacle" parent="Obstacles/FirstPath/ObstaclePath12/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/FirstPath/ObstaclePath12/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath13" parent="Obstacles/FirstPath" index="12" instance=ExtResource("4_4o51j")]
+position = Vector2(0, -192)
+rotation = -0.00324449
+curve = SubResource("Curve2D_wvd4i")
+speed = 64.0
+
+[node name="PathFollow2D" parent="Obstacles/FirstPath/ObstaclePath13" index="0"]
+position = Vector2(41.5413, 336)
+progress = 86.4
+
+[node name="SquareObstacle" parent="Obstacles/FirstPath/ObstaclePath13/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/FirstPath/ObstaclePath13/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath14" parent="Obstacles/FirstPath" index="13" instance=ExtResource("4_4o51j")]
+position = Vector2(160, 480)
+rotation = 3.13835
+curve = SubResource("Curve2D_wvd4i")
+speed = 64.0
+
+[node name="PathFollow2D" parent="Obstacles/FirstPath/ObstaclePath14" index="0"]
+position = Vector2(41.5413, 336)
+progress = 86.4
+
+[node name="SquareObstacle" parent="Obstacles/FirstPath/ObstaclePath14/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/FirstPath/ObstaclePath14/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath15" parent="Obstacles/FirstPath" index="14" instance=ExtResource("4_4o51j")]
+position = Vector2(478.91, 0.261322)
+rotation = -0.00324449
+curve = SubResource("Curve2D_wvd4i")
+speed = -128.0
+
+[node name="PathFollow2D" parent="Obstacles/FirstPath/ObstaclePath15" index="0"]
+position = Vector2(80, 336)
+progress = 48.0
+
+[node name="SquareObstacle" parent="Obstacles/FirstPath/ObstaclePath15/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/FirstPath/ObstaclePath15/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="SecondPath" type="Node2D" parent="Obstacles" index="1"]
+
+[node name="ObstaclePath29" parent="Obstacles/SecondPath" index="0" instance=ExtResource("4_4o51j")]
+position = Vector2(480.261, -1.08997)
+rotation = 1.56755
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath29" index="0"]
+position = Vector2(80, 336)
+progress = 48.0
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath29/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath29/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="61683" type="Timer" parent="Obstacles/SecondPath/ObstaclePath29/PathFollow2D" index="2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="ObstaclePath30" parent="Obstacles/SecondPath" index="1" instance=ExtResource("4_4o51j")]
+position = Vector2(-191.739, 158.91)
+rotation = -1.57404
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath30" index="0"]
+position = Vector2(80, 336)
+progress = 48.0
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath30/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath30/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="61683" type="Timer" parent="Obstacles/SecondPath/ObstaclePath30/PathFollow2D" index="2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="74462" type="Timer" parent="Obstacles/SecondPath/ObstaclePath30/PathFollow2D" index="3"]
+wait_time = 0.2
+one_shot = true
+
+[node name="ObstaclePath31" parent="Obstacles/SecondPath" index="2" instance=ExtResource("4_4o51j")]
+position = Vector2(800.261, -1.08999)
+rotation = 1.56755
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath31" index="0"]
+position = Vector2(80, 336)
+progress = 48.0
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath31/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath31/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath32" parent="Obstacles/SecondPath" index="3" instance=ExtResource("4_4o51j")]
+position = Vector2(128.261, 158.91)
+rotation = -1.57404
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath32" index="0"]
+position = Vector2(80, 336)
+progress = 48.0
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath32/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath32/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath33" parent="Obstacles/SecondPath" index="4" instance=ExtResource("4_4o51j")]
+position = Vector2(512.261, -1.08996)
+rotation = 1.56755
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath33" index="0"]
+position = Vector2(70.4587, 336)
+progress = 38.4
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath33/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath33/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="61683" type="Timer" parent="Obstacles/SecondPath/ObstaclePath33/PathFollow2D" index="2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="83518" type="Timer" parent="Obstacles/SecondPath/ObstaclePath33/PathFollow2D" index="3"]
+wait_time = 0.2
+one_shot = true
+
+[node name="ObstaclePath34" parent="Obstacles/SecondPath" index="5" instance=ExtResource("4_4o51j")]
+position = Vector2(-159.739, 158.91)
+rotation = -1.57404
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath34" index="0"]
+position = Vector2(70.4587, 336)
+progress = 38.4
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath34/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath34/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="61683" type="Timer" parent="Obstacles/SecondPath/ObstaclePath34/PathFollow2D" index="2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="74462" type="Timer" parent="Obstacles/SecondPath/ObstaclePath34/PathFollow2D" index="3"]
+wait_time = 0.2
+one_shot = true
+
+[node name="83519" type="Timer" parent="Obstacles/SecondPath/ObstaclePath34/PathFollow2D" index="4"]
+wait_time = 0.2
+one_shot = true
+
+[node name="ObstaclePath35" parent="Obstacles/SecondPath" index="6" instance=ExtResource("4_4o51j")]
+position = Vector2(832.261, -1.08999)
+rotation = 1.56755
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath35" index="0"]
+position = Vector2(70.4587, 336)
+progress = 38.4
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath35/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath35/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath36" parent="Obstacles/SecondPath" index="7" instance=ExtResource("4_4o51j")]
+position = Vector2(160.261, 158.91)
+rotation = -1.57404
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath36" index="0"]
+position = Vector2(70.4587, 336)
+progress = 38.4
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath36/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath36/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath37" parent="Obstacles/SecondPath" index="8" instance=ExtResource("4_4o51j")]
+position = Vector2(544.261, -1.08996)
+rotation = 1.56755
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath37" index="0"]
+position = Vector2(60.8052, 336)
+progress = 28.8
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath37/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath37/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="61683" type="Timer" parent="Obstacles/SecondPath/ObstaclePath37/PathFollow2D" index="2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="83518" type="Timer" parent="Obstacles/SecondPath/ObstaclePath37/PathFollow2D" index="3"]
+wait_time = 0.2
+one_shot = true
+
+[node name="89025" type="Timer" parent="Obstacles/SecondPath/ObstaclePath37/PathFollow2D" index="4"]
+wait_time = 0.2
+one_shot = true
+
+[node name="ObstaclePath38" parent="Obstacles/SecondPath" index="9" instance=ExtResource("4_4o51j")]
+position = Vector2(-127.739, 158.91)
+rotation = -1.57404
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath38" index="0"]
+position = Vector2(60.8052, 336)
+progress = 28.8
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath38/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath38/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="61683" type="Timer" parent="Obstacles/SecondPath/ObstaclePath38/PathFollow2D" index="2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="74462" type="Timer" parent="Obstacles/SecondPath/ObstaclePath38/PathFollow2D" index="3"]
+wait_time = 0.2
+one_shot = true
+
+[node name="83519" type="Timer" parent="Obstacles/SecondPath/ObstaclePath38/PathFollow2D" index="4"]
+wait_time = 0.2
+one_shot = true
+
+[node name="89026" type="Timer" parent="Obstacles/SecondPath/ObstaclePath38/PathFollow2D" index="5"]
+wait_time = 0.2
+one_shot = true
+
+[node name="ObstaclePath39" parent="Obstacles/SecondPath" index="10" instance=ExtResource("4_4o51j")]
+position = Vector2(576.261, -1.08996)
+rotation = 1.56755
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath39" index="0"]
+position = Vector2(51.1948, 336)
+progress = 19.2
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath39/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath39/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="61683" type="Timer" parent="Obstacles/SecondPath/ObstaclePath39/PathFollow2D" index="2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="83518" type="Timer" parent="Obstacles/SecondPath/ObstaclePath39/PathFollow2D" index="3"]
+wait_time = 0.2
+one_shot = true
+
+[node name="89025" type="Timer" parent="Obstacles/SecondPath/ObstaclePath39/PathFollow2D" index="4"]
+wait_time = 0.2
+one_shot = true
+
+[node name="92708" type="Timer" parent="Obstacles/SecondPath/ObstaclePath39/PathFollow2D" index="5"]
+wait_time = 0.2
+one_shot = true
+
+[node name="ObstaclePath40" parent="Obstacles/SecondPath" index="11" instance=ExtResource("4_4o51j")]
+position = Vector2(-95.7387, 158.91)
+rotation = -1.57404
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath40" index="0"]
+position = Vector2(51.1948, 336)
+progress = 19.2
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath40/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath40/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="61683" type="Timer" parent="Obstacles/SecondPath/ObstaclePath40/PathFollow2D" index="2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="74462" type="Timer" parent="Obstacles/SecondPath/ObstaclePath40/PathFollow2D" index="3"]
+wait_time = 0.2
+one_shot = true
+
+[node name="83519" type="Timer" parent="Obstacles/SecondPath/ObstaclePath40/PathFollow2D" index="4"]
+wait_time = 0.2
+one_shot = true
+
+[node name="89026" type="Timer" parent="Obstacles/SecondPath/ObstaclePath40/PathFollow2D" index="5"]
+wait_time = 0.2
+one_shot = true
+
+[node name="92709" type="Timer" parent="Obstacles/SecondPath/ObstaclePath40/PathFollow2D" index="6"]
+wait_time = 0.2
+one_shot = true
+
+[node name="ObstaclePath41" parent="Obstacles/SecondPath" index="12" instance=ExtResource("4_4o51j")]
+position = Vector2(608.261, -1.08996)
+rotation = 1.56755
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath41" index="0"]
+position = Vector2(41.5413, 336)
+progress = 9.6
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath41/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath41/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="61683" type="Timer" parent="Obstacles/SecondPath/ObstaclePath41/PathFollow2D" index="2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="83518" type="Timer" parent="Obstacles/SecondPath/ObstaclePath41/PathFollow2D" index="3"]
+wait_time = 0.2
+one_shot = true
+
+[node name="89025" type="Timer" parent="Obstacles/SecondPath/ObstaclePath41/PathFollow2D" index="4"]
+wait_time = 0.2
+one_shot = true
+
+[node name="92708" type="Timer" parent="Obstacles/SecondPath/ObstaclePath41/PathFollow2D" index="5"]
+wait_time = 0.2
+one_shot = true
+
+[node name="95045" type="Timer" parent="Obstacles/SecondPath/ObstaclePath41/PathFollow2D" index="6"]
+wait_time = 0.2
+one_shot = true
+
+[node name="ObstaclePath42" parent="Obstacles/SecondPath" index="13" instance=ExtResource("4_4o51j")]
+position = Vector2(-63.7387, 158.91)
+rotation = -1.57404
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath42" index="0"]
+position = Vector2(41.5413, 336)
+progress = 9.6
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath42/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath42/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="61683" type="Timer" parent="Obstacles/SecondPath/ObstaclePath42/PathFollow2D" index="2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="74462" type="Timer" parent="Obstacles/SecondPath/ObstaclePath42/PathFollow2D" index="3"]
+wait_time = 0.2
+one_shot = true
+
+[node name="83519" type="Timer" parent="Obstacles/SecondPath/ObstaclePath42/PathFollow2D" index="4"]
+wait_time = 0.2
+one_shot = true
+
+[node name="89026" type="Timer" parent="Obstacles/SecondPath/ObstaclePath42/PathFollow2D" index="5"]
+wait_time = 0.2
+one_shot = true
+
+[node name="92709" type="Timer" parent="Obstacles/SecondPath/ObstaclePath42/PathFollow2D" index="6"]
+wait_time = 0.2
+one_shot = true
+
+[node name="95046" type="Timer" parent="Obstacles/SecondPath/ObstaclePath42/PathFollow2D" index="7"]
+wait_time = 0.2
+one_shot = true
+
+[node name="ObstaclePath43" parent="Obstacles/SecondPath" index="14" instance=ExtResource("4_4o51j")]
+position = Vector2(640.261, -1.08995)
+rotation = 1.56755
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath43" index="0"]
+position = Vector2(32, 336)
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath43/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath43/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="61683" type="Timer" parent="Obstacles/SecondPath/ObstaclePath43/PathFollow2D" index="2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="83518" type="Timer" parent="Obstacles/SecondPath/ObstaclePath43/PathFollow2D" index="3"]
+wait_time = 0.2
+one_shot = true
+
+[node name="89025" type="Timer" parent="Obstacles/SecondPath/ObstaclePath43/PathFollow2D" index="4"]
+wait_time = 0.2
+one_shot = true
+
+[node name="92708" type="Timer" parent="Obstacles/SecondPath/ObstaclePath43/PathFollow2D" index="5"]
+wait_time = 0.2
+one_shot = true
+
+[node name="95045" type="Timer" parent="Obstacles/SecondPath/ObstaclePath43/PathFollow2D" index="6"]
+wait_time = 0.2
+one_shot = true
+
+[node name="97379" type="Timer" parent="Obstacles/SecondPath/ObstaclePath43/PathFollow2D" index="7"]
+wait_time = 0.2
+one_shot = true
+
+[node name="ObstaclePath44" parent="Obstacles/SecondPath" index="15" instance=ExtResource("4_4o51j")]
+position = Vector2(-31.7387, 158.91)
+rotation = -1.57404
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath44" index="0"]
+position = Vector2(32, 336)
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath44/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath44/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="61683" type="Timer" parent="Obstacles/SecondPath/ObstaclePath44/PathFollow2D" index="2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="74462" type="Timer" parent="Obstacles/SecondPath/ObstaclePath44/PathFollow2D" index="3"]
+wait_time = 0.2
+one_shot = true
+
+[node name="83519" type="Timer" parent="Obstacles/SecondPath/ObstaclePath44/PathFollow2D" index="4"]
+wait_time = 0.2
+one_shot = true
+
+[node name="89026" type="Timer" parent="Obstacles/SecondPath/ObstaclePath44/PathFollow2D" index="5"]
+wait_time = 0.2
+one_shot = true
+
+[node name="92709" type="Timer" parent="Obstacles/SecondPath/ObstaclePath44/PathFollow2D" index="6"]
+wait_time = 0.2
+one_shot = true
+
+[node name="95046" type="Timer" parent="Obstacles/SecondPath/ObstaclePath44/PathFollow2D" index="7"]
+wait_time = 0.2
+one_shot = true
+
+[node name="97380" type="Timer" parent="Obstacles/SecondPath/ObstaclePath44/PathFollow2D" index="8"]
+wait_time = 0.2
+one_shot = true
+
+[node name="ObstaclePath45" parent="Obstacles/SecondPath" index="16" instance=ExtResource("4_4o51j")]
+position = Vector2(672.261, -1.08995)
+rotation = 1.56755
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath45" index="0"]
+position = Vector2(41.5413, 336)
+progress = 86.4
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath45/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath45/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="61683" type="Timer" parent="Obstacles/SecondPath/ObstaclePath45/PathFollow2D" index="2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="83518" type="Timer" parent="Obstacles/SecondPath/ObstaclePath45/PathFollow2D" index="3"]
+wait_time = 0.2
+one_shot = true
+
+[node name="89025" type="Timer" parent="Obstacles/SecondPath/ObstaclePath45/PathFollow2D" index="4"]
+wait_time = 0.2
+one_shot = true
+
+[node name="92708" type="Timer" parent="Obstacles/SecondPath/ObstaclePath45/PathFollow2D" index="5"]
+wait_time = 0.2
+one_shot = true
+
+[node name="95045" type="Timer" parent="Obstacles/SecondPath/ObstaclePath45/PathFollow2D" index="6"]
+wait_time = 0.2
+one_shot = true
+
+[node name="97379" type="Timer" parent="Obstacles/SecondPath/ObstaclePath45/PathFollow2D" index="7"]
+wait_time = 0.2
+one_shot = true
+
+[node name="99713" type="Timer" parent="Obstacles/SecondPath/ObstaclePath45/PathFollow2D" index="8"]
+wait_time = 0.2
+one_shot = true
+
+[node name="ObstaclePath46" parent="Obstacles/SecondPath" index="17" instance=ExtResource("4_4o51j")]
+position = Vector2(0.261346, 158.91)
+rotation = -1.57404
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath46" index="0"]
+position = Vector2(41.5413, 336)
+progress = 86.4
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath46/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath46/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="61683" type="Timer" parent="Obstacles/SecondPath/ObstaclePath46/PathFollow2D" index="2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="74462" type="Timer" parent="Obstacles/SecondPath/ObstaclePath46/PathFollow2D" index="3"]
+wait_time = 0.2
+one_shot = true
+
+[node name="83519" type="Timer" parent="Obstacles/SecondPath/ObstaclePath46/PathFollow2D" index="4"]
+wait_time = 0.2
+one_shot = true
+
+[node name="89026" type="Timer" parent="Obstacles/SecondPath/ObstaclePath46/PathFollow2D" index="5"]
+wait_time = 0.2
+one_shot = true
+
+[node name="92709" type="Timer" parent="Obstacles/SecondPath/ObstaclePath46/PathFollow2D" index="6"]
+wait_time = 0.2
+one_shot = true
+
+[node name="95046" type="Timer" parent="Obstacles/SecondPath/ObstaclePath46/PathFollow2D" index="7"]
+wait_time = 0.2
+one_shot = true
+
+[node name="97380" type="Timer" parent="Obstacles/SecondPath/ObstaclePath46/PathFollow2D" index="8"]
+wait_time = 0.2
+one_shot = true
+
+[node name="99714" type="Timer" parent="Obstacles/SecondPath/ObstaclePath46/PathFollow2D" index="9"]
+wait_time = 0.2
+one_shot = true
+
+[node name="ObstaclePath47" parent="Obstacles/SecondPath" index="18" instance=ExtResource("4_4o51j")]
+position = Vector2(704.261, -1.08994)
+rotation = 1.56755
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath47" index="0"]
+position = Vector2(51.1948, 336)
+progress = 76.8
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath47/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath47/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath48" parent="Obstacles/SecondPath" index="19" instance=ExtResource("4_4o51j")]
+position = Vector2(32.2613, 158.91)
+rotation = -1.57404
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath48" index="0"]
+position = Vector2(51.1948, 336)
+progress = 76.8
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath48/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath48/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath49" parent="Obstacles/SecondPath" index="20" instance=ExtResource("4_4o51j")]
+position = Vector2(736.261, -1.08993)
+rotation = 1.56755
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath49" index="0"]
+position = Vector2(60.8052, 336)
+progress = 67.2
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath49/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath49/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath50" parent="Obstacles/SecondPath" index="21" instance=ExtResource("4_4o51j")]
+position = Vector2(64.2613, 158.91)
+rotation = -1.57404
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath50" index="0"]
+position = Vector2(60.8052, 336)
+progress = 67.2
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath50/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath50/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath51" parent="Obstacles/SecondPath" index="22" instance=ExtResource("4_4o51j")]
+position = Vector2(768.261, -1.08993)
+rotation = 1.56755
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath51" index="0"]
+position = Vector2(70.4587, 336)
+progress = 57.6
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath51/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath51/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath52" parent="Obstacles/SecondPath" index="23" instance=ExtResource("4_4o51j")]
+position = Vector2(96.2613, 158.91)
+rotation = -1.57404
+curve = SubResource("Curve2D_wvd4i")
+speed = 96.0
+
+[node name="PathFollow2D" parent="Obstacles/SecondPath/ObstaclePath52" index="0"]
+position = Vector2(70.4587, 336)
+progress = 57.6
+
+[node name="SquareObstacle" parent="Obstacles/SecondPath/ObstaclePath52/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/SecondPath/ObstaclePath52/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ThirdPath" type="Node2D" parent="Obstacles" index="2"]
+
+[node name="ObstaclePath16" parent="Obstacles/ThirdPath" index="0" instance=ExtResource("4_4o51j")]
+position = Vector2(638.91, 672.261)
+rotation = 3.13835
+curve = SubResource("Curve2D_wvd4i")
+speed = -128.0
+
+[node name="PathFollow2D" parent="Obstacles/ThirdPath/ObstaclePath16" index="0"]
+position = Vector2(80, 336)
+progress = 48.0
+
+[node name="SquareObstacle" parent="Obstacles/ThirdPath/ObstaclePath16/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/ThirdPath/ObstaclePath16/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath17" parent="Obstacles/ThirdPath" index="1" instance=ExtResource("4_4o51j")]
+position = Vector2(478.91, -31.7387)
+rotation = -0.00324449
+curve = SubResource("Curve2D_wvd4i")
+speed = -128.0
+
+[node name="PathFollow2D" parent="Obstacles/ThirdPath/ObstaclePath17" index="0"]
+position = Vector2(70.4587, 336)
+progress = 38.4
+
+[node name="SquareObstacle" parent="Obstacles/ThirdPath/ObstaclePath17/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/ThirdPath/ObstaclePath17/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath18" parent="Obstacles/ThirdPath" index="2" instance=ExtResource("4_4o51j")]
+position = Vector2(638.91, 640.261)
+rotation = 3.13835
+curve = SubResource("Curve2D_wvd4i")
+speed = -128.0
+
+[node name="PathFollow2D" parent="Obstacles/ThirdPath/ObstaclePath18" index="0"]
+position = Vector2(70.4587, 336)
+progress = 38.4
+
+[node name="SquareObstacle" parent="Obstacles/ThirdPath/ObstaclePath18/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/ThirdPath/ObstaclePath18/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath19" parent="Obstacles/ThirdPath" index="3" instance=ExtResource("4_4o51j")]
+position = Vector2(478.91, -63.7387)
+rotation = -0.00324449
+curve = SubResource("Curve2D_wvd4i")
+speed = -128.0
+
+[node name="PathFollow2D" parent="Obstacles/ThirdPath/ObstaclePath19" index="0"]
+position = Vector2(60.8052, 336)
+progress = 28.8
+
+[node name="SquareObstacle" parent="Obstacles/ThirdPath/ObstaclePath19/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/ThirdPath/ObstaclePath19/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath20" parent="Obstacles/ThirdPath" index="4" instance=ExtResource("4_4o51j")]
+position = Vector2(638.91, 608.261)
+rotation = 3.13835
+curve = SubResource("Curve2D_wvd4i")
+speed = -128.0
+
+[node name="PathFollow2D" parent="Obstacles/ThirdPath/ObstaclePath20" index="0"]
+position = Vector2(60.8052, 336)
+progress = 28.8
+
+[node name="SquareObstacle" parent="Obstacles/ThirdPath/ObstaclePath20/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/ThirdPath/ObstaclePath20/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath21" parent="Obstacles/ThirdPath" index="5" instance=ExtResource("4_4o51j")]
+position = Vector2(478.91, -95.7387)
+rotation = -0.00324449
+curve = SubResource("Curve2D_wvd4i")
+speed = -128.0
+
+[node name="PathFollow2D" parent="Obstacles/ThirdPath/ObstaclePath21" index="0"]
+position = Vector2(51.1948, 336)
+progress = 19.2
+
+[node name="SquareObstacle" parent="Obstacles/ThirdPath/ObstaclePath21/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/ThirdPath/ObstaclePath21/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath22" parent="Obstacles/ThirdPath" index="6" instance=ExtResource("4_4o51j")]
+position = Vector2(638.91, 576.261)
+rotation = 3.13835
+curve = SubResource("Curve2D_wvd4i")
+speed = -128.0
+
+[node name="PathFollow2D" parent="Obstacles/ThirdPath/ObstaclePath22" index="0"]
+position = Vector2(51.1948, 336)
+progress = 19.2
+
+[node name="SquareObstacle" parent="Obstacles/ThirdPath/ObstaclePath22/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/ThirdPath/ObstaclePath22/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath23" parent="Obstacles/ThirdPath" index="7" instance=ExtResource("4_4o51j")]
+position = Vector2(478.91, -127.739)
+rotation = -0.00324449
+curve = SubResource("Curve2D_wvd4i")
+speed = -128.0
+
+[node name="PathFollow2D" parent="Obstacles/ThirdPath/ObstaclePath23" index="0"]
+position = Vector2(41.5413, 336)
+progress = 9.6
+
+[node name="SquareObstacle" parent="Obstacles/ThirdPath/ObstaclePath23/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/ThirdPath/ObstaclePath23/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath24" parent="Obstacles/ThirdPath" index="8" instance=ExtResource("4_4o51j")]
+position = Vector2(638.91, 544.261)
+rotation = 3.13835
+curve = SubResource("Curve2D_wvd4i")
+speed = -128.0
+
+[node name="PathFollow2D" parent="Obstacles/ThirdPath/ObstaclePath24" index="0"]
+position = Vector2(41.5413, 336)
+progress = 9.6
+
+[node name="SquareObstacle" parent="Obstacles/ThirdPath/ObstaclePath24/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/ThirdPath/ObstaclePath24/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath25" parent="Obstacles/ThirdPath" index="9" instance=ExtResource("4_4o51j")]
+position = Vector2(478.91, -159.739)
+rotation = -0.00324449
+curve = SubResource("Curve2D_wvd4i")
+speed = -128.0
+
+[node name="PathFollow2D" parent="Obstacles/ThirdPath/ObstaclePath25" index="0"]
+position = Vector2(32, 336)
+
+[node name="SquareObstacle" parent="Obstacles/ThirdPath/ObstaclePath25/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/ThirdPath/ObstaclePath25/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath26" parent="Obstacles/ThirdPath" index="10" instance=ExtResource("4_4o51j")]
+position = Vector2(638.91, 512.261)
+rotation = 3.13835
+curve = SubResource("Curve2D_wvd4i")
+speed = -128.0
+
+[node name="PathFollow2D" parent="Obstacles/ThirdPath/ObstaclePath26" index="0"]
+position = Vector2(32, 336)
+
+[node name="SquareObstacle" parent="Obstacles/ThirdPath/ObstaclePath26/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/ThirdPath/ObstaclePath26/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath27" parent="Obstacles/ThirdPath" index="11" instance=ExtResource("4_4o51j")]
+position = Vector2(478.91, -191.739)
+rotation = -0.00324449
+curve = SubResource("Curve2D_wvd4i")
+speed = -128.0
+
+[node name="PathFollow2D" parent="Obstacles/ThirdPath/ObstaclePath27" index="0"]
+position = Vector2(41.5413, 336)
+progress = 86.4
+
+[node name="SquareObstacle" parent="Obstacles/ThirdPath/ObstaclePath27/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(6.10352e-05, 16)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/ThirdPath/ObstaclePath27/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000183105, 48)
+rotation = -1.5708
+
+[node name="ObstaclePath28" parent="Obstacles/ThirdPath" index="12" instance=ExtResource("4_4o51j")]
+position = Vector2(638.91, 480.261)
+rotation = 3.13835
+curve = SubResource("Curve2D_wvd4i")
+speed = -128.0
+
+[node name="PathFollow2D" parent="Obstacles/ThirdPath/ObstaclePath28" index="0"]
+position = Vector2(41.5413, 336)
+progress = 86.4
+
+[node name="SquareObstacle" parent="Obstacles/ThirdPath/ObstaclePath28/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(3.05176e-05, 15.9999)
+rotation = -1.5708
+
+[node name="SquareObstacle2" parent="Obstacles/ThirdPath/ObstaclePath28/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+position = Vector2(0.000152588, 48)
+rotation = -1.5708
+
+[node name="BottomTrack" type="Path2D" parent="Obstacles" index="3"]
+curve = SubResource("Curve2D_1dfjn")
+script = ExtResource("6_8f1jv")
+speed = 280.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Obstacles/BottomTrack" index="0"]
+position = Vector2(656, 400)
+rotation = 3.14159
+rotates = false
+
+[node name="SquareObstacle" parent="Obstacles/BottomTrack/PathFollow2D" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(0, -32)
+
+[node name="SquareObstacle2" parent="Obstacles/BottomTrack/PathFollow2D" index="1" instance=ExtResource("5_wlpve")]
+
+[node name="SquareObstacle3" parent="Obstacles/BottomTrack/PathFollow2D" index="2" instance=ExtResource("5_wlpve")]
+position = Vector2(0, 32)
+
+[node name="SquareObstacle4" parent="Obstacles/BottomTrack/PathFollow2D" index="3" instance=ExtResource("5_wlpve")]
+position = Vector2(-32, -32)
+
+[node name="SquareObstacle5" parent="Obstacles/BottomTrack/PathFollow2D" index="4" instance=ExtResource("5_wlpve")]
+position = Vector2(-32, 0)
+
+[node name="SquareObstacle6" parent="Obstacles/BottomTrack/PathFollow2D" index="5" instance=ExtResource("5_wlpve")]
+position = Vector2(-32, 32)
+
+[node name="SquareObstacle7" parent="Obstacles/BottomTrack/PathFollow2D" index="6" instance=ExtResource("5_wlpve")]
+position = Vector2(32, -32)
+
+[node name="SquareObstacle8" parent="Obstacles/BottomTrack/PathFollow2D" index="7" instance=ExtResource("5_wlpve")]
+position = Vector2(32, 0)
+
+[node name="SquareObstacle9" parent="Obstacles/BottomTrack/PathFollow2D" index="8" instance=ExtResource("5_wlpve")]
+position = Vector2(32, 32)
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="Obstacles/BottomTrack" index="1"]
+position = Vector2(400, 256.012)
+rotation = -1.5708
+progress = 400.0
+rotates = false
+
+[node name="SquareObstacle" parent="Obstacles/BottomTrack/PathFollow2D2" index="0" instance=ExtResource("5_wlpve")]
+position = Vector2(0, -32)
+
+[node name="SquareObstacle2" parent="Obstacles/BottomTrack/PathFollow2D2" index="1" instance=ExtResource("5_wlpve")]
+
+[node name="SquareObstacle3" parent="Obstacles/BottomTrack/PathFollow2D2" index="2" instance=ExtResource("5_wlpve")]
+position = Vector2(0, 32)
+
+[node name="SquareObstacle4" parent="Obstacles/BottomTrack/PathFollow2D2" index="3" instance=ExtResource("5_wlpve")]
+position = Vector2(-32, -32)
+
+[node name="SquareObstacle5" parent="Obstacles/BottomTrack/PathFollow2D2" index="4" instance=ExtResource("5_wlpve")]
+position = Vector2(-32, 0)
+
+[node name="SquareObstacle6" parent="Obstacles/BottomTrack/PathFollow2D2" index="5" instance=ExtResource("5_wlpve")]
+position = Vector2(-32, 32)
+
+[node name="SquareObstacle7" parent="Obstacles/BottomTrack/PathFollow2D2" index="6" instance=ExtResource("5_wlpve")]
+position = Vector2(32.0123, -32)
+
+[node name="SquareObstacle8" parent="Obstacles/BottomTrack/PathFollow2D2" index="7" instance=ExtResource("5_wlpve")]
+position = Vector2(32.0123, 0)
+
+[node name="SquareObstacle9" parent="Obstacles/BottomTrack/PathFollow2D2" index="8" instance=ExtResource("5_wlpve")]
+position = Vector2(32.0123, 32)
+
+[node name="WinArea" parent="." index="3"]
+position = Vector2(240, 400)
+
+[node name="Foreground" parent="." index="4"]
+tile_set = SubResource("TileSet_esihd")
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, 851968, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 851987, 0, 0, 786451, 0, 0, 720915, 0, 0, 655379, 0, 0, 589843, 0, 0, 524307, 0, 0, 458771, 0, 0, 393235, 0, 0, 327699, 0, 0, 262163, 0, 0, 196627, 0, 0, 131091, 0, 0, 65555, 0, 0, 19, 0, 0, 18, 0, 0, 17, 0, 0, 16, 0, 0, 15, 0, 0, 14, 0, 0, 13, 0, 0, 12, 0, 0, 11, 0, 0, 10, 0, 0, 9, 0, 0, 8, 0, 0, 7, 0, 0, 6, 0, 0, 5, 0, 0, 4, 0, 0, 3, 0, 0, 2, 0, 0, 1, 0, 0, 851972, 0, 0, 786436, 0, 0, 720900, 0, 0, 655364, 0, 0, 589828, 0, 0, 524292, 0, 0, 458756, 0, 0, 393220, 0, 0, 327684, 0, 0, 262148, 0, 0, 851973, 0, 0, 786437, 0, 0, 720901, 0, 0, 655365, 0, 0, 589829, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 327695, 0, 0, 327694, 0, 0, 327693, 0, 0, 327692, 0, 0, 327691, 0, 0, 327690, 0, 0, 327689, 0, 0, 327688, 0, 0, 327687, 0, 0, 327686, 0, 0, 393231, 0, 0, 458767, 0, 0, 524303, 0, 0, 589839, 0, 0, 655375, 0, 0, 655374, 0, 0, 589838, 0, 0, 524302, 0, 0, 458766, 0, 0, 393230, 0, 0, 851978, 0, 0, 786442, 0, 0, 720906, 0, 0, 655370, 0, 0, 589834, 0, 0, 589833, 0, 0, 655369, 0, 0, 720905, 0, 0, 786441, 0, 0, 851977, 0, 0)
+
+[editable path="Obstacles/FirstPath/ObstaclePath"]
+[editable path="Obstacles/FirstPath/ObstaclePath2"]
+[editable path="Obstacles/FirstPath/ObstaclePath3"]
+[editable path="Obstacles/FirstPath/ObstaclePath4"]
+[editable path="Obstacles/FirstPath/ObstaclePath5"]
+[editable path="Obstacles/FirstPath/ObstaclePath6"]
+[editable path="Obstacles/FirstPath/ObstaclePath7"]
+[editable path="Obstacles/FirstPath/ObstaclePath8"]
+[editable path="Obstacles/FirstPath/ObstaclePath9"]
+[editable path="Obstacles/FirstPath/ObstaclePath10"]
+[editable path="Obstacles/FirstPath/ObstaclePath11"]
+[editable path="Obstacles/FirstPath/ObstaclePath12"]
+[editable path="Obstacles/FirstPath/ObstaclePath13"]
+[editable path="Obstacles/FirstPath/ObstaclePath14"]
+[editable path="Obstacles/FirstPath/ObstaclePath15"]
+[editable path="Obstacles/SecondPath/ObstaclePath29"]
+[editable path="Obstacles/SecondPath/ObstaclePath30"]
+[editable path="Obstacles/SecondPath/ObstaclePath31"]
+[editable path="Obstacles/SecondPath/ObstaclePath32"]
+[editable path="Obstacles/SecondPath/ObstaclePath33"]
+[editable path="Obstacles/SecondPath/ObstaclePath34"]
+[editable path="Obstacles/SecondPath/ObstaclePath35"]
+[editable path="Obstacles/SecondPath/ObstaclePath36"]
+[editable path="Obstacles/SecondPath/ObstaclePath37"]
+[editable path="Obstacles/SecondPath/ObstaclePath38"]
+[editable path="Obstacles/SecondPath/ObstaclePath39"]
+[editable path="Obstacles/SecondPath/ObstaclePath40"]
+[editable path="Obstacles/SecondPath/ObstaclePath41"]
+[editable path="Obstacles/SecondPath/ObstaclePath42"]
+[editable path="Obstacles/SecondPath/ObstaclePath43"]
+[editable path="Obstacles/SecondPath/ObstaclePath44"]
+[editable path="Obstacles/SecondPath/ObstaclePath45"]
+[editable path="Obstacles/SecondPath/ObstaclePath46"]
+[editable path="Obstacles/SecondPath/ObstaclePath47"]
+[editable path="Obstacles/SecondPath/ObstaclePath48"]
+[editable path="Obstacles/SecondPath/ObstaclePath49"]
+[editable path="Obstacles/SecondPath/ObstaclePath50"]
+[editable path="Obstacles/SecondPath/ObstaclePath51"]
+[editable path="Obstacles/SecondPath/ObstaclePath52"]
+[editable path="Obstacles/ThirdPath/ObstaclePath16"]
+[editable path="Obstacles/ThirdPath/ObstaclePath17"]
+[editable path="Obstacles/ThirdPath/ObstaclePath18"]
+[editable path="Obstacles/ThirdPath/ObstaclePath19"]
+[editable path="Obstacles/ThirdPath/ObstaclePath20"]
+[editable path="Obstacles/ThirdPath/ObstaclePath21"]
+[editable path="Obstacles/ThirdPath/ObstaclePath22"]
+[editable path="Obstacles/ThirdPath/ObstaclePath23"]
+[editable path="Obstacles/ThirdPath/ObstaclePath24"]
+[editable path="Obstacles/ThirdPath/ObstaclePath25"]
+[editable path="Obstacles/ThirdPath/ObstaclePath26"]
+[editable path="Obstacles/ThirdPath/ObstaclePath27"]
+[editable path="Obstacles/ThirdPath/ObstaclePath28"]
