@@ -10,12 +10,14 @@ const _LEVELS := [
 	preload("res://Games/ShapeEscape/Levels/ShapeEscapeLevel2.tscn"),
 	preload("res://Games/ShapeEscape/Levels/ShapeEscapeLevel3.tscn"),
 	preload("res://Games/ShapeEscape/Levels/ShapeEscapeLevel4.tscn"),
+	preload("res://Games/ShapeEscape/Levels/ShapeEscapeLevel5.tscn"),
 ]
 
 @onready var _canvas_layer := $CanvasLayer
 
 var _unlocked_levels: Array[bool]= [
 	true,
+	false,
 	false,
 	false,
 	false,
